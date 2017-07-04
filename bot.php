@@ -1,3 +1,7 @@
+
+$proxy = 'http://fixie:KVlXELIvf9Vtfv8@velodrome.usefixie.com:80';
+$proxyauth = 'username:password';
+
 <?php
 $access_token = 'isiMdv0y3gQIJtA0RA9VQt29RNPZ60M1034R2qz4J4Cn6cyN//C+Zd6IshyKiwXKZ45XTTiD6ow7EiAurfT2vFAnW3Q8WXieHweUSo/8oVdopVepWnrhJHgFDOeCXejSOzpRuWHwCI/U09KYRwdsZQdB04t89/1O/w1cDnyilFU=';
 
@@ -37,6 +41,8 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+				curl_setopt($ch, CURLOPT_PROXY, $proxy);
+				curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 			$result = curl_exec($ch);
 			curl_close($ch);
 
